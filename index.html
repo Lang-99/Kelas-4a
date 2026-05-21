@@ -3,395 +3,523 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Website Resmi Kelas 4 A</title>
+    <title>S4A - Website Resmi Kelas 4 A</title>
+    <!-- Tailwind CSS v4 & FontAwesome Icons -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #0b0f19;
+            background-color: #05070f;
         }
-        /* Mengoptimalkan UI HP hingga kerapatan layar tinggi / DPI 900 */
         .phone-container {
-            max-width: 500px;
+            max-width: 500px; /* Sangat presisi & kokoh hingga DPI 900 */
             margin: 0 auto;
-            min-height: 100vh;
-            background-color: #121824;
-            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            background-color: #0b0f19;
+            box-shadow: 0 0 60px rgba(0, 0, 0, 0.7);
         }
-        /* Animasi Transisi Smooth Modern */
-        .page-transition {
+        .smooth-ui {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .press-effect:active {
-            transform: scale(0.96);
-            filter: brightness(0.9);
+            transform: scale(0.95);
         }
-        /* Custom Scrollbar untuk Chat/List */
-        .custom-scroll::-webkit-scrollbar {
-            width: 4px;
-        }
-        .custom-scroll::-webkit-scrollbar-thumb {
-            background: #1f293d;
-            border-radius: 10px;
-        }
+        /* Kustomisasi scrollbar halus */
+        .custom-scroll::-webkit-scrollbar { width: 3px; }
+        .custom-scroll::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
     </style>
 </head>
-<body class="text-slate-200 antialiased">
+<body class="text-slate-200 antialiased selection:bg-blue-600">
 
-    <div class="phone-container flex flex-col justify-between relative pb-28">
+    <div class="phone-container min-h-screen flex flex-col justify-between relative pb-24">
         
-        <header class="bg-[#1a2236]/80 backdrop-blur-md border-b border-slate-800/80 px-5 pt-6 pb-5 sticky top-0 z-40 flex justify-between items-center">
+        <!-- ================= APPS HEADER ================= -->
+        <header class="bg-[#111827]/80 backdrop-blur-md border-b border-slate-800/60 px-5 py-4 sticky top-0 z-40 flex justify-between items-center">
             <div>
-                <span class="text-[10px] text-blue-400 uppercase tracking-widest font-bold">Eksklusif Kelas 4 A</span>
-                <h1 class="text-xl font-bold tracking-tight text-white mt-0.5">S4A Dashboard</h1>
+                <span class="text-[9px] text-blue-400 uppercase tracking-widest font-extrabold block">Ruang Digital</span>
+                <h1 class="text-lg font-black tracking-tight text-white">KELAS 4 A</h1>
             </div>
-            <button onclick="bukaHalaman('admin-login')" class="w-10 h-10 bg-slate-800/80 border border-slate-700/50 text-slate-300 rounded-xl flex items-center justify-center press-effect page-transition hover:text-white">
-                <i class="fa-solid fa-user-shield text-base"></i>
-            </button>
+            <div id="badge-identitas" class="text-[10px] bg-slate-800/80 border border-slate-700/60 px-3 py-1.5 rounded-xl font-bold text-slate-300">
+                Memuat Profil...
+            </div>
         </header>
 
-        <main class="px-5 py-6 flex-grow overflow-y-auto">
+        <!-- ================= MAIN WINDOW ================= -->
+        <main class="px-4 py-4 flex-grow overflow-y-auto">
             
-            <section id="hal-beranda" class="page-transition space-y-6">
-                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-5 text-white relative overflow-hidden shadow-lg shadow-blue-950/20">
+            <!-- SECTION 1: BERANDA & STRUKTUR (LINE STYLE) -->
+            <section id="view-beranda" class="smooth-ui space-y-5">
+                <div class="bg-gradient-to-tr from-blue-600 to-indigo-700 rounded-2xl p-5 text-white relative overflow-hidden shadow-lg shadow-blue-950/40">
                     <div class="relative z-10">
-                        <h2 class="text-lg font-bold mb-1">Maju Bersama, Hebat Semua!</h2>
-                        <p class="text-xs text-blue-100/80 leading-relaxed">Wadah komunikasi digital kreatif untuk seluruh siswa-siswi berprestasi kelas 4 A.</p>
+                        <h2 class="text-base font-extrabold mb-1">Maju Bersama, Hebat Semua!</h2>
+                        <p class="text-[11px] text-blue-100/80 leading-relaxed">Platform internal multiplayer interaktif ciptaan kelas 4 A Bukit Tunggal.</p>
                     </div>
-                    <i class="fa-solid fa-bolt absolute -right-4 -bottom-6 text-8xl text-white/10 rotate-12"></i>
+                    <i class="fa-solid fa-cloud absolute -right-6 -bottom-6 text-8xl text-white/10"></i>
                 </div>
 
-                <div class="bg-[#1a2236] p-5 rounded-2xl border border-slate-800/80">
-                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2">
-                        <i class="fa-solid fa-sitemap text-blue-400"></i> Struktur Kepengurusan Kelas
-                    </h3>
-                    
-                    <div class="relative pl-4 space-y-5 border-l-2 border-dashed border-slate-700">
+                <!-- Struktur Organisasi Bergaris -->
+                <div class="bg-[#161f30] p-5 rounded-2xl border border-slate-800/80">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2"><i class="fa-solid fa-sitemap text-blue-500"></i> Struktur Kepengurusan</h3>
+                    <div class="relative pl-4 space-y-4 border-l-2 border-dashed border-slate-800">
                         <div class="relative">
-                            <div class="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-blue-500 shadow-md shadow-blue-500/50"></div>
-                            <p class="text-[10px] font-bold text-blue-400 uppercase tracking-wider">Wali Kelas</p>
-                            <p class="text-sm font-semibold text-white">Soedieantoe</p>
+                            <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500"></div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase">Wali Kelas</p>
+                            <p class="text-xs font-bold text-white">Soedieantoe</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-amber-500 shadow-md shadow-amber-500/50"></div>
-                            <p class="text-[10px] font-bold text-amber-400 uppercase tracking-wider">Ketua Kelas</p>
-                            <p class="text-sm font-semibold text-white">Maria</p>
+                            <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-amber-500"></div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase">Ketua Kelas</p>
+                            <p class="text-xs font-bold text-white">Maria</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-purple-500 shadow-md shadow-purple-500/50"></div>
-                            <p class="text-[10px] font-bold text-purple-400 uppercase tracking-wider">Wakil Ketua Kelas</p>
-                            <p class="text-sm font-semibold text-white">Sabila</p>
+                            <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-purple-500"></div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase">Wakil Ketua Kelas</p>
+                            <p class="text-xs font-bold text-white">Sabila</p>
                         </div>
                         <div class="relative">
-                            <div class="absolute -left-[23px] top-1.5 w-3 h-3 rounded-full bg-emerald-500 shadow-md shadow-emerald-500/50"></div>
-                            <p class="text-[10px] font-bold text-emerald-400 uppercase tracking-wider">Bendahara</p>
-                            <p class="text-sm font-semibold text-white">Nataniel</p>
+                            <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase">Bendahara</p>
+                            <p class="text-xs font-bold text-white">Nataniel</p>
                         </div>
                     </div>
                 </div>
 
-                <div class="bg-[#1a2236] p-4 rounded-xl border border-slate-800/60 flex items-start gap-3">
-                    <div class="w-9 h-9 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center shrink-0">
-                        <i class="fa-solid fa-location-dot"></i>
-                    </div>
+                <!-- Informasi Lokasi -->
+                <div class="bg-[#161f30] p-4 rounded-xl border border-slate-800/60 flex items-center gap-3">
+                    <div class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div>
                     <div>
-                        <p class="text-xs text-slate-400">Lokasi Kelas Fisik</p>
-                        <p class="text-sm font-bold text-white">Bukit Tunggal</p>
-                        <p class="text-[11px] text-slate-400">Palangkaraya, Kalimantan Tengah</p>
+                        <p class="text-[11px] font-bold text-white">Bukit Tunggal</p>
+                        <p class="text-[10px] text-slate-400">Palangkaraya, Kalimantan Tengah</p>
                     </div>
                 </div>
             </section>
 
-            <section id="hal-foto" class="hidden page-transition space-y-4">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-base font-bold text-white">Galeri Foto Kelas</h3>
-                    <span class="text-xs bg-slate-800 border border-slate-700 text-slate-300 px-3 py-1 rounded-full font-medium" id="foto-count">0 Foto</span>
+            <!-- SECTION 2: CHAT GLOBAL MULTIPLAYER -->
+            <section id="view-chat" class="hidden smooth-ui flex flex-col space-y-3">
+                <!-- Area Pesan Tersemat (PIN) -->
+                <div id="pinned-container" class="hidden bg-blue-950/40 border border-blue-900/60 p-2.5 rounded-xl flex items-center gap-2 text-[11px] text-blue-300">
+                    <i class="fa-solid fa-thumbtack text-xs text-blue-400 animate-bounce"></i>
+                    <div class="flex-grow truncate" id="pinned-content">Belum ada pesan tersemat</div>
                 </div>
-                <div id="container-foto" class="grid grid-cols-2 gap-3"></div>
-            </section>
 
-            <section id="hal-murid" class="hidden page-transition space-y-4">
-                <div class="flex justify-between items-center">
-                    <h3 class="text-base font-bold text-white">Daftar Siswa Siswi</h3>
-                    <span class="text-xs bg-blue-950 border border-blue-800 text-blue-400 px-3 py-1 rounded-full font-semibold" id="murid-count">0 Orang</span>
-                </div>
-                <div id="container-murid" class="space-y-3"></div>
-            </section>
-
-            <section id="hal-chat" class="hidden page-transition flex flex-col h-[60vh] space-y-3">
-                <div class="flex justify-between items-center shrink-0">
-                    <h3 class="text-base font-bold text-white">Global Chat Kelas</h3>
-                    <span class="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                </div>
+                <!-- Box Utama Chat Real-time -->
+                <div id="box-chat-engine" class="h-[55vh] overflow-y-auto space-y-3 pr-1 custom-scroll flex flex-col"></div>
                 
-                <div id="box-chat-room" class="flex-grow bg-[#1a2236] border border-slate-800/80 rounded-2xl p-4 overflow-y-auto space-y-3 custom-scroll"></div>
-                
-                <div class="bg-[#1a2236] p-2 rounded-xl border border-slate-800/80 flex items-center gap-2">
-                    <label class="w-10 h-10 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white press-effect cursor-pointer">
-                        <i class="fa-solid fa-paperclip"></i>
-                        <input type="file" id="chat-file-input" accept="image/*" class="hidden">
+                <!-- Panel Input Chat -->
+                <div class="bg-[#161f30] p-2 rounded-xl border border-slate-800/80 flex items-center gap-2">
+                    <label class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white press-effect cursor-pointer shrink-0">
+                        <i class="fa-solid fa-camera-retro text-sm"></i>
+                        <input type="file" id="chat-media-input" accept="image/*" class="hidden">
                     </label>
-                    <input type="text" id="chat-text-input" class="flex-grow bg-slate-900 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" placeholder="Ketik pesan obrolan...">
-                    <button onclick="kirimPesanChat()" class="w-10 h-10 rounded-lg bg-blue-600 text-white flex items-center justify-center press-effect"><i class="fa-solid fa-paper-plane"></i></button>
+                    <input type="text" id="chat-input-text" class="flex-grow bg-slate-950 border border-slate-800 rounded-lg px-3 py-2 text-xs text-white focus:outline-none focus:border-blue-500" placeholder="Ketik obrolan kelas...">
+                    <button onclick="kirimPesanMasal()" class="w-9 h-9 rounded-lg bg-blue-600 text-white flex items-center justify-center press-effect shrink-0"><i class="fa-solid fa-paper-plane text-xs"></i></button>
                 </div>
             </section>
 
-            <section id="hal-admin-login" class="hidden page-transition pt-4">
-                <div class="bg-[#1a2236] p-6 rounded-2xl border border-slate-800 shadow-xl space-y-4">
+            <!-- SECTION 3: DATABASES SISWA (NEXT PREV CAROUSEL + MEME PROFILE) -->
+            <section id="view-siswa" class="hidden smooth-ui space-y-4">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">Direktori Siswa</h3>
+                    <span id="counter-carousel" class="text-[10px] bg-slate-800 px-2 py-0.5 rounded border border-slate-700 text-slate-300">0/0</span>
+                </div>
+
+                <!-- Kartu Siswa Utama -->
+                <div id="card-siswa-container" class="bg-[#161f30] rounded-2xl border border-slate-800 overflow-hidden relative min-h-[340px] flex flex-col justify-between">
+                    <!-- Placeholder/Isi Dinamis -->
+                    <div id="siswa-card-content" class="p-5 space-y-4"></div>
+                </div>
+
+                <!-- Navigasi Next / Previous Slider -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button onclick="geserSiswa(-1)" class="bg-slate-800 hover:bg-slate-700 border border-slate-700/80 p-3 rounded-xl font-bold text-xs press-effect smooth-ui"><i class="fa-solid fa-arrow-left mr-2"></i> Sebelumnya</button>
+                    <button onclick="geserSiswa(1)" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-xl font-bold text-xs press-effect smooth-ui">Berikutnya <i class="fa-solid fa-arrow-right ml-2"></i></button>
+                </div>
+            </section>
+
+            <!-- SECTION 4: PANEL ADMIN (UPLOAD KELAS & MURID BARU) -->
+            <section id="view-admin" class="hidden smooth-ui space-y-5">
+                <div id="admin-login-box" class="bg-[#161f30] p-6 rounded-2xl border border-slate-800 shadow-xl space-y-4">
                     <div class="text-center">
-                        <div class="w-12 h-12 bg-slate-800 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-2"><i class="fa-solid fa-shield-halved text-xl"></i></div>
-                        <h3 class="text-base font-bold text-white">Login Admin Terverifikasi</h3>
+                        <div class="w-11 h-11 bg-slate-800 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-2"><i class="fa-solid fa-user-lock"></i></div>
+                        <h3 class="text-sm font-bold text-white">Validasi Sandi Admin</h3>
                     </div>
-                    <div>
-                        <label class="block text-[11px] font-bold text-slate-400 uppercase tracking-wider mb-1">Akses Sandi</label>
-                        <input type="password" id="input-password" class="w-full px-4 py-3 bg-slate-900 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-sm text-white" placeholder="••••••••">
+                    <input type="password" id="sandi-admin" class="w-full px-4 py-2.5 bg-slate-950 border border-slate-800 rounded-xl focus:outline-none focus:border-blue-500 text-xs text-white text-center" placeholder="Sandi Ruang Kontrol">
+                    <button onclick="validasiAdmin()" class="w-full bg-blue-600 text-white font-bold py-2.5 rounded-xl text-xs press-effect smooth-ui">Masuk</button>
+                </div>
+
+                <div id="admin-dashboard" class="hidden space-y-4">
+                    <div class="bg-emerald-950/30 border border-emerald-900/60 p-3 rounded-xl flex justify-between items-center">
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-shield-check mr-1"></i> Admin Terverifikasi</span>
+                        <button onclick="keluarAdmin()" class="text-[10px] bg-red-950 text-red-400 px-2 py-1 rounded border border-red-900">Keluar</button>
                     </div>
-                    <button onclick="prosesLogin()" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl text-sm press-effect page-transition">Buka Akses Kontrol</button>
-                </div>
-            </section>
 
-            <section id="hal-admin-panel" class="hidden page-transition space-y-5">
-                <div class="bg-blue-950/40 border border-blue-900 p-4 rounded-xl flex justify-between items-center">
-                    <span class="text-xs font-bold text-blue-400"><i class="fa-solid fa-circle-check mr-1"></i> Sesi Admin Aktif</span>
-                    <button onclick="logoutAdmin()" class="text-xs text-red-400 font-bold hover:underline">Log Out</button>
-                </div>
-
-                <div class="bg-[#1a2236] p-5 rounded-2xl border border-slate-800 space-y-3">
-                    <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider"><i class="fa-solid fa-camera mr-1 text-blue-400"></i> Publikasikan Foto Kelas</h4>
-                    <input type="file" id="upload-foto-input" accept="image/*" class="block w-full text-xs text-slate-400 file:mr-3 file:py-2 file:px-4 file:rounded-lg file:border-0 file:bg-slate-800 file:text-slate-200 file:font-semibold hover:file:bg-slate-700"/>
-                </div>
-
-                <div class="bg-[#1a2236] p-5 rounded-2xl border border-slate-800 space-y-3">
-                    <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider"><i class="fa-solid fa-user-plus mr-1 text-emerald-400"></i> Registrasi Murid Baru</h4>
-                    <div class="space-y-3">
-                        <input type="text" id="murid-nama" class="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-white" placeholder="Nama Lengkap">
-                        <div class="grid grid-cols-2 gap-2">
-                            <input type="number" id="murid-umur" class="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-white" placeholder="Umur">
-                            <input type="number" id="murid-absen" class="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-white" placeholder="No Absen">
+                    <!-- Input Data Siswa Baru -->
+                    <div class="bg-[#161f30] p-5 rounded-2xl border border-slate-800 space-y-3">
+                        <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider"><i class="fa-solid fa-user-plus text-blue-400 mr-1"></i> Daftarkan Siswa & Foto Profil/Meme</h4>
+                        <div class="space-y-2.5">
+                            <input type="text" id="add-nama" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Nama Lengkap Siswa">
+                            <div class="grid grid-cols-2 gap-2">
+                                <input type="number" id="add-absen" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="No. Absen">
+                                <input type="number" id="add-umur" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Umur Siswa">
+                            </div>
+                            <textarea id="add-deskripsi" rows="2" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Deskripsi kepribadian, hobi, cita-cita atau meme quotes..."></textarea>
+                            <div>
+                                <label class="block text-[10px] font-bold text-slate-400 mb-1">Foto Profil / Foto Meme Siswa</label>
+                                <input type="file" id="add-foto-file" accept="image/*" class="block w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-300 file:font-bold hover:file:bg-slate-700"/>
+                            </div>
+                            <button onclick="prosesSimpanSiswa()" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg text-xs press-effect smooth-ui">Kirim ke Server Kelas</button>
                         </div>
-                        <textarea id="murid-deskripsi" rows="2" class="w-full px-3 py-2 bg-slate-900 border border-slate-800 rounded-lg text-xs text-white" placeholder="Catatan/Deskripsi..."></textarea>
-                        <button onclick="simpanDataMurid()" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold py-2.5 rounded-lg text-xs press-effect page-transition">Simpan ke Server Lokal</button>
                     </div>
                 </div>
             </section>
 
         </main>
 
-        <div class="absolute bottom-18 left-0 right-0 text-center pointer-events-none">
-            <span class="text-[10px] tracking-widest uppercase font-bold text-slate-600/60 bg-slate-950/20 px-3 py-1 rounded-full">Made by langit || semua murid kelas 4 a</span>
+        <!-- ================= MODAL OPTIONS / TITIK 3 POPUP ================= -->
+        <div id="modal-opsi" class="hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-end justify-center pb-10 px-4">
+            <div class="bg-[#111827] border border-slate-800 w-full max-w-[420px] rounded-2xl p-4 space-y-3 shadow-2xl animate-slide-up">
+                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-wider text-center">Menu Kontrol Admin</h4>
+                <button onclick="eksekusiPinPesan()" class="w-full bg-blue-900/30 border border-blue-800 text-blue-400 py-2.5 rounded-xl font-bold text-xs press-effect"><i class="fa-solid fa-thumbtack mr-2"></i> Sematkan Pesan (PIN)</button>
+                <button onclick="eksekusiHapusPesan()" class="w-full bg-red-900/30 border border-red-800 text-red-400 py-2.5 rounded-xl font-bold text-xs press-effect"><i class="fa-solid fa-trash-can mr-2"></i> Hapus Pesan Ini</button>
+                <button onclick="tutupModalOpsi()" class="w-full bg-slate-800 text-slate-300 py-2.5 rounded-xl font-bold text-xs press-effect">Batal</button>
+            </div>
         </div>
 
-        <nav class="absolute bottom-0 left-0 right-0 bg-[#0e1420]/90 backdrop-blur-md border-t border-slate-800/80 flex justify-around py-3 px-2 z-40 rounded-t-2xl">
-            <button onclick="bukaHalaman('beranda')" id="nav-beranda" class="flex flex-col items-center gap-1 text-blue-500 press-effect page-transition">
-                <i class="fa-solid fa-house text-base"></i><span class="text-[9px] font-semibold">Beranda</span>
+        <!-- ================= CREDIT WATERMARK FOOTER ================= -->
+        <footer class="absolute bottom-16 left-0 right-0 text-center pointer-events-none z-10">
+            <p class="text-[9px] tracking-widest uppercase font-extrabold text-slate-600 bg-slate-950/40 px-4 py-1.5 rounded-full inline-block backdrop-blur-xs border border-slate-900/40">Made by langit || semua murid kelas 4 a</p>
+        </footer>
+
+        <!-- ================= MOBILE APP NAVIGATION BAR ================= -->
+        <nav class="absolute bottom-0 left-0 right-0 bg-[#090d16]/95 backdrop-blur-md border-t border-slate-900 flex justify-around py-2.5 px-1 z-40 rounded-t-2xl">
+            <button onclick="navigasiHalaman('beranda')" id="btn-nav-beranda" class="flex flex-col items-center gap-1 text-blue-500 font-bold press-effect smooth-ui">
+                <i class="fa-solid fa-house-chimney text-base"></i><span class="text-[9px]">Beranda</span>
             </button>
-            <button onclick="bukaHalaman('foto')" id="nav-foto" class="flex flex-col items-center gap-1 text-slate-500 press-effect page-transition">
-                <i class="fa-solid fa-images text-base"></i><span class="text-[9px] font-semibold">Galeri</span>
+            <button onclick="navigasiHalaman('chat')" id="btn-nav-chat" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
+                <i class="fa-solid fa-comments text-base"></i><span class="text-[9px]">Chat Room</span>
             </button>
-            <button onclick="bukaHalaman('chat')" id="nav-chat" class="flex flex-col items-center gap-1 text-slate-500 press-effect page-transition relative">
-                <i class="fa-solid fa-comments text-base"></i><span class="text-[9px] font-semibold">Chat</span>
+            <button onclick="navigasiHalaman('siswa')" id="btn-nav-siswa" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
+                <i class="fa-solid fa-user-group text-base"></i><span class="text-[9px]">Siswa 4A</span>
             </button>
-            <button onclick="bukaHalaman('murid')" id="nav-murid" class="flex flex-col items-center gap-1 text-slate-500 press-effect page-transition">
-                <i class="fa-solid fa-users text-base"></i><span class="text-[9px] font-semibold">Siswa</span>
+            <button onclick="navigasiHalaman('admin')" id="btn-nav-admin" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
+                <i class="fa-solid fa-gears text-base"></i><span class="text-[9px]">Admin</span>
             </button>
         </nav>
 
     </div>
 
-    <script>
-        let databaseFoto = JSON.parse(localStorage.getItem('db_foto_4a')) || [];
-        let databaseMurid = JSON.parse(localStorage.getItem('db_murid_4a')) || [];
-        let databaseChat = JSON.parse(localStorage.getItem('db_chat_4a')) || [
-            {tipe: 'teks', pengirim: 'Sistem', isi: 'Selamat datang di obrolan global kelas 4 A!', waktu: 'Hari ini'}
-        ];
-        let isAdminLoggedIn = false;
-        let lampiranFotoBase64 = null;
+    <!-- ================= DATABASES CORE APPLICATION (FIREBASE INTEGRATED) ================= -->
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
+        import { getDatabase, ref, onValue, push, set, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        function bukaHalaman(namaHalaman) {
-            const pages = ['hal-beranda', 'hal-foto', 'hal-murid', 'hal-chat', 'hal-admin-login', 'hal-admin-panel'];
-            pages.forEach(p => document.getElementById(p).classList.add('hidden'));
+        // Konfigurasi Asli Firebase Proyek Anda
+        const firebaseConfig = {
+            apiKey: "AIzaSyAbzZzlhrbuAch7xom4PhKInT5DWE8_3Rg",
+            authDomain: "kelas4a-85ac0.firebaseapp.com",
+            projectId: "kelas4a-85ac0",
+            databaseURL: "https://kelas4a-85ac0-default-rtdb.firebaseio.com/", // Link auto-generate database Firebase Anda
+            storageBucket: "kelas4a-85ac0.firebasestorage.app",
+            messagingSenderId: "264176132161",
+            appId: "1:264176132161:web:c79ff7fb1bc1953aa666c0",
+            measurementId: "G-PL7QJR416Z"
+        };
 
-            const navs = ['nav-beranda', 'nav-foto', 'nav-chat', 'nav-murid'];
-            navs.forEach(n => document.getElementById(n).className = "flex flex-col items-center gap-1 text-slate-500 press-effect page-transition");
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
 
-            if (namaHalaman === 'beranda') {
-                document.getElementById('hal-beranda').classList.remove('hidden');
-                document.getElementById('nav-beranda').className = "flex flex-col items-center gap-1 text-blue-400 press-effect page-transition scale-105";
-            } else if (namaHalaman === 'foto') {
-                document.getElementById('hal-foto').classList.remove('hidden');
-                document.getElementById('nav-foto').className = "flex flex-col items-center gap-1 text-blue-400 press-effect page-transition scale-105";
-                renderFoto();
-            } else if (namaHalaman === 'murid') {
-                document.getElementById('hal-murid').classList.remove('hidden');
-                document.getElementById('nav-murid').className = "flex flex-col items-center gap-1 text-blue-400 press-effect page-transition scale-105";
-                renderMurid();
-            } else if (namaHalaman === 'chat') {
-                document.getElementById('hal-chat').classList.remove('hidden');
-                document.getElementById('nav-chat').className = "flex flex-col items-center gap-1 text-blue-400 press-effect page-transition scale-105";
-                renderChat();
-            } else if (namaHalaman === 'admin-login') {
-                if (isAdminLoggedIn) { document.getElementById('hal-admin-panel').classList.remove('hidden'); }
-                else { document.getElementById('hal-admin-login').classList.remove('hidden'); }
+        // State Global Aplikasi
+        let namaSiswaLokal = localStorage.getItem('s4a_username');
+        let statusAdminAktif = localStorage.getItem('s4a_is_admin') === 'true';
+        let arrayDaftarSiswa = [];
+        let indexSiswaSekarang = 0;
+        let base64LampiranChat = null;
+        let base64FotoMuridBaru = null;
+        let idTargetOpsiPesan = null;
+        let dataTargetOpsiPesan = null;
+
+        // Cek Nama Unik Terlebih Dahulu saat Aplikasi Dimuat
+        window.addEventListener('DOMContentLoaded', () => {
+            verifikasiNamaUser();
+            if(statusAdminAktif) pemicuAdminLoginSukses();
+            listenDatabaseRealtime();
+        });
+
+        function verifikasiNamaUser() {
+            if (!namaSiswaLokal) {
+                let inputNama = prompt("Sebelum masuk chat, masukkan nama panggilan kamu (Gak usah nama lengkap):");
+                if (!inputNama || inputNama.trim() === "") {
+                    alert("Nama wajib diisi untuk keamanan obrolan kelas!");
+                    return verifikasiNamaUser();
+                }
+                
+                inputNama = inputNama.trim();
+                
+                // Cek ke Firebase apakah nama ini sudah dikunci orang lain
+                onValue(ref(db, 'nama_terpakai/' + inputNama.toLowerCase()), (snapshot) => {
+                    if (snapshot.exists() && snapshot.val() !== true) {
+                        alert(`Nama "${inputNama}" sudah dipakai temanmu! Gunakan nama pembeda lainnya.`);
+                        verifikasiNamaUser();
+                    } else {
+                        set(ref(db, 'nama_terpakai/' + inputNama.toLowerCase()), true);
+                        localStorage.setItem('s4a_username', inputNama);
+                        namaSiswaLokal = inputNama;
+                        document.getElementById('badge-identitas').innerText = namaSiswaLokal;
+                    }
+                }, { onlyOnce: true });
+            } else {
+                document.getElementById('badge-identitas').innerText = namaSiswaLokal;
             }
         }
 
-        function prosesLogin() {
-            if (document.getElementById('input-password').value === 'langitjp') {
-                isAdminLoggedIn = true;
-                document.getElementById('input-password').value = '';
-                document.getElementById('hal-admin-login').classList.add('hidden');
-                document.getElementById('hal-admin-panel').classList.remove('hidden');
-            } else { alert('Sandi salah!'); }
-        }
+        // Jalur Navigasi Antar Menu (Smooth UI Switcher)
+        window.navigasiHalaman = (targetView) => {
+            const listViews = ['view-beranda', 'view-chat', 'view-siswa', 'view-admin'];
+            listViews.forEach(v => document.getElementById(v).classList.add('hidden'));
+            
+            const listNavs = ['btn-nav-beranda', 'btn-nav-chat', 'btn-nav-siswa', 'btn-nav-admin'];
+            listNavs.forEach(n => document.getElementById(n).className = "flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui");
 
-        function logoutAdmin() { isAdminLoggedIn = false; bukaHalaman('beranda'); }
+            document.getElementById(`view-${targetView}`).classList.remove('hidden');
+            document.getElementById(`btn-nav-${targetView}`).className = "flex flex-col items-center gap-1 text-blue-400 font-bold press-effect smooth-ui scale-105";
+        };
 
-        // Core Render Foto & Terintegrasi tombol hapus di dalam halaman Utama jika admin aktif
-        document.getElementById('upload-foto-input').addEventListener('change', function(e) {
+        // ================= INTEGRASI LOGIKA CHAT MULTIPLAYER =================
+        document.getElementById('chat-media-input').addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
-                const r = new FileReader();
-                r.onload = function(ev) {
-                    databaseFoto.push(ev.target.result);
-                    localStorage.setItem('db_foto_4a', JSON.stringify(databaseFoto));
-                    alert('Foto kelas berhasil diunggah!');
-                    document.getElementById('upload-foto-input').value = '';
-                }
-                r.readAsDataURL(file);
+                const reader = new FileReader();
+                reader.onload = (ev) => {
+                    base64LampiranChat = ev.target.result;
+                    alert("Foto berhasil dilampirkan, siap dikirim!");
+                };
+                reader.readAsDataURL(file);
             }
         });
 
-        function renderFoto() {
-            const c = document.getElementById('container-foto');
-            document.getElementById('foto-count').innerText = databaseFoto.length + ' Foto';
-            c.innerHTML = '';
-            
-            if(databaseFoto.length === 0) {
-                c.innerHTML = `<p class="col-span-2 text-center text-xs text-slate-500 py-10">Belum ada foto.</p>`;
-                return;
-            }
+        window.kirimPesanMasal = () => {
+            const inputElement = document.getElementById('chat-input-text');
+            if(!inputElement.value.trim() && !base64LampiranChat) return;
 
-            databaseFoto.forEach((f, i) => {
-                c.innerHTML += `
-                    <div class="bg-[#1a2236] p-1.5 rounded-xl border border-slate-800 relative group overflow-hidden">
-                        <img src="${f}" class="w-full h-32 object-cover rounded-lg">
-                        ${isAdminLoggedIn ? `<button onclick="hapusFoto(${i})" class="absolute top-2 right-2 bg-red-600/90 text-white w-7 h-7 rounded-lg text-xs flex items-center justify-center border border-red-500 shadow-md transition-all"><i class="fa-solid fa-trash-can"></i></button>` : ''}
-                    </div>`;
-            });
-        }
+            const paketDataChat = {
+                namaUser: statusAdminAktif ? "Admin Kelas" : namaSiswaLokal,
+                teksPesan: inputElement.value.trim(),
+                fotoPesan: base64LampiranChat || "",
+                waktuKirim: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
+                isAdmin: statusAdminAktif,
+                timestamp: Date.now()
+            };
 
-        function hapusFoto(i) {
-            if(confirm("Hapus foto terpilih?")) { databaseFoto.splice(i, 1); localStorage.setItem('db_foto_4a', JSON.stringify(databaseFoto)); renderFoto(); }
-        }
+            push(ref(db, 'obrolan_live'), paketDataChat);
+            inputElement.value = '';
+            base64LampiranChat = null;
+        };
 
-        // Core Render Murid & Terintegrasi tombol hapus
-        function simpanDataMurid() {
-            const nama = document.getElementById('murid-nama').value;
-            const umur = document.getElementById('murid-umur').value;
-            const absen = document.getElementById('murid-absen').value;
-            const deskripsi = document.getElementById('murid-deskripsi').value;
-
-            if(!nama || !umur) return alert('Nama & umur wajib diisi!');
-            databaseMurid.push({nama, umur, absen, deskripsi});
-            databaseMurid.sort((a,b) => (parseInt(a.absen)||99) - (parseInt(b.absen)||99));
-            localStorage.setItem('db_murid_4a', JSON.stringify(databaseMurid));
-            
-            alert('Murid didaftarkan!');
-            ['murid-nama', 'murid-umur', 'murid-absen', 'murid-deskripsi'].forEach(id => document.getElementById(id).value = '');
-        }
-
-        function renderMurid() {
-            const c = document.getElementById('container-murid');
-            document.getElementById('murid-count').innerText = databaseMurid.length + ' Orang';
-            c.innerHTML = '';
-
-            if(databaseMurid.length === 0) {
-                c.innerHTML = `<p class="text-center text-xs text-slate-500 py-10">Belum ada data siswa.</p>`;
-                return;
-            }
-
-            databaseMurid.forEach((m, i) => {
-                c.innerHTML += `
-                    <div class="bg-[#1a2236] p-4 rounded-xl border border-slate-800 flex items-center justify-between">
-                        <div class="flex items-center gap-3">
-                            <div class="w-8 h-8 rounded-lg bg-slate-800 text-xs font-bold text-slate-400 flex items-center justify-center border border-slate-700">${m.absen || '#'}</div>
-                            <div>
-                                <h4 class="text-xs font-bold text-white">${m.nama} <span class="text-[10px] text-slate-500 ml-1">(${m.umur} Thn)</span></h4>
-                                <p class="text-[11px] text-slate-400 mt-0.5">${m.deskripsi || '-'}</p>
-                            </div>
+        function listenDatabaseRealtime() {
+            // 1. Sinkronisasi Room Chat Global
+            onValue(ref(db, 'obrolan_live'), (snapshot) => {
+                const boxChat = document.getElementById('box-chat-engine');
+                boxChat.innerHTML = '';
+                if(!snapshot.exists()) {
+                    boxChat.innerHTML = `<div class="text-center text-slate-500 text-xs py-10">Ruang obrolan masih sepi.</div>`;
+                    return;
+                }
+                
+                snapshot.forEach((child) => {
+                    const idChat = child.key;
+                    const data = child.val();
+                    
+                    const divCard = document.createElement('div');
+                    // Desain Soft UI nembus elegan
+                    divCard.className = `p-3 rounded-xl max-w-[85%] smooth-ui ${data.isAdmin ? 'ml-auto bg-blue-950/40 border border-blue-900/40' : 'bg-slate-900/60 border border-slate-800/60'}`;
+                    
+                    let mediaKonten = data.fotoPesan ? `<img src="${data.fotoPesan}" class="w-full max-h-48 object-cover rounded-lg border border-slate-800 mt-2">` : '';
+                    
+                    divCard.innerHTML = `
+                        <div class="flex items-center justify-between gap-3 mb-1">
+                            <span class="text-[10px] font-black text-blue-400">${data.namaUser} ${data.isAdmin ? '<span class="text-amber-400 text-[9px] font-bold ml-1 bg-amber-950 px-1 rounded border border-amber-800 animate-pulse">[VERIFIED]</span>' : ''}</span>
+                            <span class="text-[8px] text-slate-500">${data.waktuKirim}</span>
                         </div>
-                        ${isAdminLoggedIn ? `<button onclick="hapusMurid(${i})" class="text-red-400 hover:text-red-500 p-1 text-xs"><i class="fa-solid fa-user-minus"></i></button>` : ''}
-                    </div>`;
+                        <p class="text-xs text-slate-200 leading-relaxed">${data.teksPesan}</p>
+                        ${mediaKonten}
+                    `;
+
+                    // Fitur Long Press / Klik Tahan Lama untuk Memunculkan Titik 3
+                    let deteksiWaktuTahan;
+                    divCard.addEventListener('touchstart', () => {
+                        deteksiWaktuTahan = setTimeout(() => pemicuMenuOpsi(idChat, data), 700);
+                    });
+                    divCard.addEventListener('touchend', () => clearTimeout(deteksiWaktuTahan));
+                    divCard.addEventListener('mousedown', () => {
+                        deteksiWaktuTahan = setTimeout(() => pemicuMenuOpsi(idChat, data), 700);
+                    });
+                    divCard.addEventListener('mouseup', () => clearTimeout(deteksiWaktuTahan));
+
+                    boxChat.appendChild(divCard);
+                });
+                boxChat.scrollTop = boxChat.scrollHeight;
+            });
+
+            // 2. Sinkronisasi Pesan Tersemat (PIN)
+            onValue(ref(db, 'pesan_tersemat'), (snapshot) => {
+                const pinBox = document.getElementById('pinned-container');
+                const pinText = document.getElementById('pinned-content');
+                if(snapshot.exists()) {
+                    const data = snapshot.val();
+                    pinText.innerHTML = `<b>${data.namaUser}:</b> ${data.teksPesan || 'Mengirim foto'}`;
+                    pinBox.classList.remove('hidden');
+                } else {
+                    pinBox.classList.add('hidden');
+                }
+            });
+
+            // 3. Sinkronisasi Halaman Direktori Siswa (Carousel)
+            onValue(ref(db, 'data_siswa_kelas'), (snapshot) => {
+                arrayDaftarSiswa = [];
+                if(snapshot.exists()) {
+                    snapshot.forEach((child) => {
+                        let dataMurid = child.val();
+                        dataMurid.idKunci = child.key;
+                        arrayDaftarSiswa.push(dataMurid);
+                    });
+                    // Urut otomatis dari absen terkecil
+                    arrayDaftarSiswa.sort((a,b) => parseInt(a.absen) - parseInt(b.absen));
+                }
+                renderCarouselSiswa();
             });
         }
 
-        function hapusMurid(i) {
-            if(confirm("Hapus data murid ini?")) { databaseMurid.splice(i, 1); localStorage.setItem('db_murid_4a', JSON.stringify(databaseMurid)); renderMurid(); }
+        // Operasi Menu Titik 3 (Pop up Pilihan Admin)
+        function pemicuMenuOpsi(idChat, data) {
+            if(!statusAdminAktif) return; // Hanya muncul jika mode admin aktif
+            idTargetOpsiPesan = idChat;
+            dataTargetOpsiPesan = data;
+            document.getElementById('modal-opsi').classList.remove('hidden');
         }
 
-        // ================= ENGINE FITUR CHAT GLOBAL =================
-        document.getElementById('chat-file-input').addEventListener('change', function(e) {
+        window.tutupModalOpsi = () => {
+            document.getElementById('modal-opsi').classList.add('hidden');
+        };
+
+        window.eksekusiPinPesan = () => {
+            set(ref(db, 'pesan_tersemat'), dataTargetOpsiPesan);
+            tutupModalOpsi();
+            alert("Pesan berhasil dipin di bagian atas!");
+        };
+
+        window.eksekusiHapusPesan = () => {
+            remove(ref(db, 'obrolan_live/' + idTargetOpsiPesan));
+            tutupModalOpsi();
+        };
+
+        // ================= MANAGEMENT CAROUSEL DATA SISWA (REALTIME) =================
+        window.geserSiswa = (arah) => {
+            if(arrayDaftarSiswa.length === 0) return;
+            indexSiswaSekarang = (indexSiswaSekarang + arah + arrayDaftarSiswa.length) % arrayDaftarSiswa.length;
+            renderCarouselSiswa();
+        };
+
+        function renderCarouselSiswa() {
+            const wadahKonten = document.getElementById('siswa-card-content');
+            const penunjukAngka = document.getElementById('counter-carousel');
+            
+            if(arrayDaftarSiswa.length === 0) {
+                wadahKonten.innerHTML = `<div class="text-center text-xs text-slate-500 py-16">Belum ada murid terdaftar. Tambahkan di panel Admin.</div>`;
+                penunjukAngka.innerText = "0/0";
+                return;
+            }
+
+            const s = arrayDaftarSiswa[indexSiswaSekarang];
+            penunjukAngka.innerText = `${indexSiswaSekarang + 1}/${arrayDaftarSiswa.length}`;
+
+            // Gambar Background Profil / Meme
+            let bgFotoMeme = s.fotoProfil ? `<img src="${s.fotoProfil}" class="w-full h-44 object-cover rounded-xl border border-slate-800 shadow-inner">` : `
+                <div class="w-full h-44 bg-slate-950 rounded-xl border border-dashed border-slate-800 flex flex-col items-center justify-center text-slate-600">
+                    <i class="fa-solid fa-user-astronaut text-3xl mb-1"></i><span class="text-[10px]">Tanpa Foto Muka / Meme</span>
+                </div>`;
+
+            wadahKonten.innerHTML = `
+                ${bgFotoMeme}
+                <div class="space-y-1">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-base font-extrabold text-white tracking-tight">${s.nama}</h4>
+                        <span class="text-[10px] bg-blue-950 text-blue-400 px-2 py-0.5 rounded-md border border-blue-900 font-bold">Absen ${s.absen}</span>
+                    </div>
+                    <p class="text-[11px] text-slate-400 font-medium">Umur: ${s.umur} Tahun</p>
+                    <p class="text-xs text-slate-300 leading-relaxed bg-slate-950/40 p-3 rounded-lg border border-slate-900/60 mt-2 italic">"${s.deskripsi || 'Tidak ada deskripsi'}"</p>
+                </div>
+                ${statusAdminAktif ? `<button onclick="hapusSiswaDariDatabase('${s.idKunci}')" class="w-full mt-2 bg-red-950/40 border border-red-900 text-red-400 py-1.5 rounded-lg text-[10px] font-bold press-effect">HAPUS DATA SISWA INI</button>` : ''}
+            `;
+        }
+
+        window.hapusSiswaDariDatabase = (idKunci) => {
+            if(confirm("Hapus siswa ini dari direktori resmi?")) {
+                remove(ref(db, 'data_siswa_kelas/' + idKunci));
+                indexSiswaSekarang = 0;
+            }
+        };
+
+        // ================= KONTROL PANEL ADMIN =================
+        document.getElementById('add-foto-file').addEventListener('change', (e) => {
             const file = e.target.files[0];
             if(file) {
-                const r = new FileReader();
-                r.onload = function(ev) {
-                    lampiranFotoBase64 = ev.target.result;
-                    alert('Gambar berhasil dilampirkan! Siap dikirim.');
-                };
-                r.readAsDataURL(file);
+                const reader = new FileReader();
+                reader.onload = (ev) => { base64FotoMuridBaru = ev.target.result; };
+                reader.readAsDataURL(file);
             }
         });
 
-        function kirimPesanChat() {
-            const inputTeks = document.getElementById('chat-text-input');
-            if(!inputTeks.value.trim() && !lampiranFotoBase64) return;
-
-            let isiPesan = inputTeks.value.trim();
-            let tipeMsg = 'teks';
-
-            if(lampiranFotoBase64) {
-                tipeMsg = 'foto';
-                isiPesan = lampiranFotoBase64; 
+        window.validasiAdmin = () => {
+            const pass = document.getElementById('sandi-admin').value;
+            if (pass === 'langitjp') {
+                statusAdminAktif = true;
+                localStorage.setItem('s4a_is_admin', 'true');
+                pemicuAdminLoginSukses();
+                alert("Sandi Terverifikasi! Mode admin aktif.");
+            } else {
+                alert("Sandi Akses Salah!");
             }
+        };
 
-            databaseChat.push({
-                tipe: tipeMsg,
-                pengirim: isAdminLoggedIn ? 'Admin Kelas' : 'Warga 4A',
-                isi: isiPesan,
-                waktu: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'})
-            });
-
-            localStorage.setItem('db_chat_4a', JSON.stringify(databaseChat));
-            inputTeks.value = '';
-            lampiranFotoBase64 = null;
-            renderChat();
+        function pemicuAdminLoginSukses() {
+            document.getElementById('admin-login-box').classList.add('hidden');
+            document.getElementById('admin-dashboard').classList.remove('hidden');
+            document.getElementById('badge-identitas').innerHTML = "ADMIN <span class='text-amber-400'>[★]</span>";
+            renderCarouselSiswa();
         }
 
-        function renderChat() {
-            const r = document.getElementById('box-chat-room');
-            r.innerHTML = '';
+        window.keluarAdmin = () => {
+            statusAdminAktif = false;
+            localStorage.setItem('s4a_is_admin', 'false');
+            document.getElementById('admin-login-box').classList.remove('hidden');
+            document.getElementById('admin-dashboard').classList.add('hidden');
+            document.getElementById('sandi-admin').value = '';
+            verifikasiNamaUser();
+            renderCarouselSiswa();
+        };
+
+        window.prosesSimpanSiswa = () => {
+            const nama = document.getElementById('add-nama').value;
+            const absen = document.getElementById('add-absen').value;
+            const umur = document.getElementById('add-umur').value;
+            const deskripsi = document.getElementById('add-deskripsi').value;
+
+            if(!nama || !absen || !umur) return alert("Harap isi seluruh formulir inti siswa!");
+
+            const paketDataSiswa = {
+                nama, absen, umur, deskripsi,
+                fotoProfil: base64FotoMuridBaru || ""
+            };
+
+            push(ref(db, 'data_siswa_kelas'), paketDataSiswa);
+            alert("Siswa baru sukses disinkronisasikan ke sistem!");
             
-            databaseChat.forEach(msg => {
-                let konten = `<p class="text-xs text-slate-100">${msg.isi}</p>`;
-                if(msg.tipe === 'foto') {
-                    konten = `<img src="${msg.isi}" class="w-full max-h-40 object-cover rounded-lg border border-slate-700 mt-1">`;
-                }
-
-                r.innerHTML += `
-                    <div class="bg-slate-900/60 border border-slate-800/80 p-3 rounded-xl max-w-[85%] ${msg.pengirim === 'Admin Kelas' ? 'ml-auto border-blue-900/50 bg-blue-950/20' : ''}">
-                        <div class="flex justify-between items-center gap-4 mb-1">
-                            <span class="text-[10px] font-bold text-blue-400">${msg.pengirim}</span>
-                            <span class="text-[9px] text-slate-500">${msg.waktu}</span>
-                        </div>
-                        ${konten}
-                    </div>`;
-            });
-            r.scrollTop = r.scrollHeight; // Auto scroll ke bawah
-        }
+            ['add-nama', 'add-absen', 'add-umur', 'add-deskripsi', 'add-foto-file'].forEach(id => document.getElementById(id).value = '');
+            base64FotoMuridBaru = null;
+        };
     </script>
 </body>
 </html>
