@@ -28,6 +28,15 @@
         }
         .custom-scroll::-webkit-scrollbar { width: 3px; }
         .custom-scroll::-webkit-scrollbar-thumb { background: #1e293b; border-radius: 10px; }
+        
+        /* Animasi Kustom */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animate-fade-in {
+            animation: fadeIn 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
     </style>
 </head>
 <body class="text-slate-200 antialiased selection:bg-blue-600">
@@ -46,8 +55,8 @@
 
         <main class="px-4 py-4 flex-grow overflow-y-auto">
             
-            <section id="view-beranda" class="smooth-ui space-y-5">
-                <div class="bg-gradient-to-tr from-blue-600 to-indigo-700 rounded-2xl p-5 text-white relative overflow-hidden shadow-lg shadow-blue-950/40">
+            <section id="view-beranda" class="smooth-ui space-y-5 animate-fade-in">
+                <div class="bg-gradient-to-tr from-blue-600 to-indigo-700 rounded-2xl p-5 text-white relative overflow-hidden shadow-lg shadow-blue-950/40 transform hover:scale-[1.01] transition duration-300">
                     <div class="relative z-10">
                         <h2 class="text-base font-extrabold mb-1">Maju Bersama, Hebat Semua!</h2>
                         <p class="text-[11px] text-blue-100/80 leading-relaxed">Platform internal multiplayer interaktif ciptaan kelas 4 A Bukit Tunggal.</p>
@@ -55,25 +64,30 @@
                     <i class="fa-solid fa-cloud absolute -right-6 -bottom-6 text-8xl text-white/10"></i>
                 </div>
 
-                <div class="bg-[#161f30] p-5 rounded-2xl border border-slate-800/80">
+                <div class="bg-[#161f30] p-5 rounded-2xl border border-slate-800/80 shadow-md">
                     <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4 flex items-center gap-2"><i class="fa-solid fa-sitemap text-blue-500"></i> Struktur Kepengurusan</h3>
                     <div class="relative pl-4 space-y-4 border-l-2 border-dashed border-slate-800">
-                        <div class="relative">
+                        <div class="relative animate-fade-in" style="animation-delay: 0.1s;">
                             <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-blue-500"></div>
                             <p class="text-[9px] font-bold text-slate-400 uppercase">Wali Kelas</p>
                             <p class="text-xs font-bold text-white">Soedieantoe</p>
                         </div>
-                        <div class="relative">
+                        <div class="relative animate-fade-in" style="animation-delay: 0.2s;">
                             <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-amber-500"></div>
                             <p class="text-[9px] font-bold text-slate-400 uppercase">Ketua Kelas</p>
                             <p class="text-xs font-bold text-white">Maria</p>
                         </div>
-                        <div class="relative">
+                        <div class="relative animate-fade-in" style="animation-delay: 0.3s;">
                             <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-purple-500"></div>
                             <p class="text-[9px] font-bold text-slate-400 uppercase">Wakil Ketua Kelas</p>
                             <p class="text-xs font-bold text-white">Sabila</p>
                         </div>
-                        <div class="relative">
+                        <div class="relative animate-fade-in" style="animation-delay: 0.4s;">
+                            <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-pink-500"></div>
+                            <p class="text-[9px] font-bold text-slate-400 uppercase">Sekretaris</p>
+                            <p class="text-xs font-bold text-white">Faida</p>
+                        </div>
+                        <div class="relative animate-fade-in" style="animation-delay: 0.5s;">
                             <div class="absolute -left-[21px] top-1 w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
                             <p class="text-[9px] font-bold text-slate-400 uppercase">Bendahara</p>
                             <p class="text-xs font-bold text-white">Nataniel</p>
@@ -82,7 +96,7 @@
                 </div>
 
                 <div class="bg-[#161f30] p-4 rounded-xl border border-slate-800/60 flex items-center gap-3">
-                    <div class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0"><i class="fa-solid fa-location-dot"></i></div>
+                    <div class="w-8 h-8 rounded-lg bg-red-500/10 text-red-400 flex items-center justify-center shrink-0 animate-pulse"><i class="fa-solid fa-location-dot"></i></div>
                     <div>
                         <p class="text-[11px] font-bold text-white">Bukit Tunggal</p>
                         <p class="text-[10px] text-slate-400">Palangkaraya, Kalimantan Tengah</p>
@@ -90,14 +104,22 @@
                 </div>
             </section>
 
-            <section id="view-chat" class="hidden smooth-ui flex flex-col space-y-3">
+            <section id="view-chat" class="hidden smooth-ui flex flex-col space-y-3 animate-fade-in">
                 <div id="pinned-container" class="hidden bg-blue-950/40 border border-blue-900/60 p-2.5 rounded-xl flex items-center gap-2 text-[11px] text-blue-300">
                     <i class="fa-solid fa-thumbtack text-xs text-blue-400"></i>
                     <div class="flex-grow truncate" id="pinned-content">Belum ada pesan tersemat</div>
                 </div>
 
-                <div id="box-chat-engine" class="h-[50vh] overflow-y-auto space-y-3 pr-1 custom-scroll flex flex-col"></div>
+                <div id="box-chat-engine" class="h-[45vh] overflow-y-auto space-y-3 pr-1 custom-scroll flex flex-col"></div>
                 
+                <div id="reply-preview-container" class="hidden bg-slate-900 border border-slate-800 p-2 rounded-xl flex items-center justify-between gap-2 text-xs">
+                    <div class="border-l-4 border-blue-500 pl-2 truncate">
+                        <p class="text-[10px] font-bold text-blue-400" id="reply-target-user">User</p>
+                        <p class="text-slate-400 truncate text-[11px]" id="reply-target-text">Teks...</p>
+                    </div>
+                    <button onclick="batalReplyPesan()" class="text-slate-500 hover:text-white px-2"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+
                 <div class="bg-[#161f30] p-2 rounded-xl border border-slate-800/80 flex items-center gap-2">
                     <label class="w-9 h-9 rounded-lg bg-slate-800 border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white press-effect cursor-pointer shrink-0">
                         <i class="fa-solid fa-camera-retro text-sm"></i>
@@ -108,21 +130,36 @@
                 </div>
             </section>
 
-            <section id="view-siswa" class="hidden smooth-ui space-y-4">
+            <section id="view-siswa" class="hidden smooth-ui space-y-4 animate-fade-in">
                 <div class="flex justify-between items-center">
                     <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">Direktori Siswa</h3>
                     <span id="counter-carousel" class="text-[10px] bg-slate-800 px-2 py-0.5 rounded border border-slate-700 text-slate-300">0/0</span>
                 </div>
-                <div id="card-siswa-container" class="bg-[#161f30] rounded-2xl border border-slate-800 overflow-hidden relative min-h-[340px] flex flex-col justify-between">
+                
+                <div id="card-siswa-container" class="bg-[#161f30] rounded-2xl border border-slate-800 overflow-hidden relative min-h-[340px] flex flex-col justify-between shadow-lg">
                     <div id="siswa-card-content" class="p-5 space-y-4"></div>
                 </div>
+
                 <div class="grid grid-cols-2 gap-3">
                     <button onclick="geserSiswa(-1)" class="bg-slate-800 hover:bg-slate-700 border border-slate-700/80 p-3 rounded-xl font-bold text-xs press-effect smooth-ui"><i class="fa-solid fa-arrow-left mr-2"></i> Sebelumnya</button>
                     <button onclick="geserSiswa(1)" class="bg-blue-600 hover:bg-blue-700 p-3 rounded-xl font-bold text-xs press-effect smooth-ui">Berikutnya <i class="fa-solid fa-arrow-right ml-2"></i></button>
                 </div>
+
+                <div class="bg-slate-900/60 p-4 rounded-xl border border-dashed border-slate-800 text-center space-y-2">
+                    <p class="text-xs text-slate-400">Profil kamu belum terdaftar di daftar atas?</p>
+                    <button onclick="bukaModalMandiri('siswa')" class="bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold px-4 py-2 rounded-lg text-xs border border-slate-700 transition press-effect"><i class="fa-solid fa-user-plus text-blue-400 mr-1"></i> Tambah Profilku Sendiri</button>
+                </div>
             </section>
 
-            <section id="view-admin" class="hidden smooth-ui space-y-5">
+            <section id="view-galeri" class="hidden smooth-ui space-y-4 animate-fade-in">
+                <div class="flex justify-between items-center">
+                    <h3 class="text-sm font-bold uppercase tracking-wider text-slate-400">Galeri Foto 4A</h3>
+                    <button onclick="bukaModalMandiri('galeri')" class="bg-blue-600 hover:bg-blue-500 text-white text-[11px] font-bold px-3 py-1.5 rounded-lg press-effect"><i class="fa-solid fa-upload mr-1"></i> Unggah Foto</button>
+                </div>
+                <div id="box-galeri-foto" class="grid grid-cols-2 gap-3 overflow-y-auto max-h-[55vh] pr-1 custom-scroll"></div>
+            </section>
+
+            <section id="view-admin" class="hidden smooth-ui space-y-5 animate-fade-in">
                 <div id="admin-login-box" class="bg-[#161f30] p-6 rounded-2xl border border-slate-800 shadow-xl space-y-4">
                     <div class="text-center">
                         <div class="w-11 h-11 bg-slate-800 rounded-full flex items-center justify-center text-blue-400 mx-auto mb-2"><i class="fa-solid fa-user-lock"></i></div>
@@ -137,25 +174,62 @@
                         <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-shield-check mr-1"></i> Admin Terverifikasi</span>
                         <button onclick="keluarAdmin()" class="text-[10px] bg-red-950 text-red-400 px-2 py-1 rounded border border-red-900">Keluar</button>
                     </div>
-                    <div class="bg-[#161f30] p-5 rounded-2xl border border-slate-800 space-y-3">
-                        <h4 class="text-xs font-bold text-slate-300 uppercase tracking-wider"><i class="fa-solid fa-user-plus text-blue-400 mr-1"></i> Daftarkan Siswa Baru</h4>
-                        <div class="space-y-2.5">
-                            <input type="text" id="add-nama" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Nama Lengkap Siswa">
-                            <div class="grid grid-cols-2 gap-2">
-                                <input type="number" id="add-absen" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="No. Absen">
-                                <input type="number" id="add-umur" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Umur">
-                            </div>
-                            <textarea id="add-deskripsi" rows="2" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Deskripsi/Meme Quotes..."></textarea>
-                            <div>
-                                <input type="file" id="add-foto-file" accept="image/*" class="block w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-300 file:font-bold"/>
-                            </div>
-                            <button onclick="prosesSimpanSiswa()" class="w-full bg-blue-600 text-white font-bold py-2 rounded-lg text-xs press-effect smooth-ui">Simpan Siswa</button>
-                        </div>
-                    </div>
+                    <p class="text-xs text-slate-400 italic text-center">Gunakan fitur input langsung di halaman Siswa & Galeri. Status admin kamu akan otomatis membuka hak akses menghapus postingan.</p>
                 </div>
             </section>
 
         </main>
+
+        <div id="modal-mandiri" class="hidden fixed inset-0 bg-black/80 backdrop-blur-md z-50 flex items-center justify-center p-4">
+            <div class="bg-[#111827] border border-slate-800 w-full max-w-[400px] rounded-2xl p-5 space-y-4 shadow-2xl animate-fade-in">
+                <div class="flex justify-between items-center">
+                    <h3 id="modal-mandiri-title" class="text-sm font-extrabold text-white uppercase">Tambah Data</h3>
+                    <button onclick="tutupModalMandiri()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                
+                <div id="form-mandiri-siswa" class="space-y-3 hidden">
+                    <input type="text" id="m-nama" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Nama Lengkap Kamu">
+                    <div class="grid grid-cols-2 gap-2">
+                        <input type="number" id="m-absen" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="No. Absen">
+                        <input type="number" id="m-umur" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Umur (Tahun)">
+                    </div>
+                    <textarea id="m-deskripsi" rows="2" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Meme Quotes / Kata-kata hari ini..."></textarea>
+                </div>
+
+                <div id="form-mandiri-galeri" class="space-y-3 hidden">
+                    <input type="text" id="m-keterangan" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Keterangan / Judul Foto">
+                </div>
+
+                <div>
+                    <label class="block text-[11px] font-bold text-slate-400 mb-1">Pilih Gambar/Foto:</label>
+                    <input type="file" id="m-file-gambar" accept="image/*" class="block w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-md file:border-0 file:bg-slate-800 file:text-slate-300 file:font-bold"/>
+                </div>
+
+                <button onclick="prosesSimpanMandiri()" class="w-full bg-blue-600 text-white font-bold py-2.5 rounded-xl text-xs press-effect">Unggah Sekarang</button>
+            </div>
+        </div>
+
+        <div id="modal-report" class="hidden fixed inset-0 bg-black/80 backdrop-blur-xs z-50 flex items-center justify-center p-4">
+            <form action="https://formsubmit.co/fislol9200@gmail.com" method="POST" class="bg-[#111827] border border-slate-800 w-full max-w-[400px] rounded-2xl p-5 space-y-3 shadow-2xl animate-fade-in">
+                <input type="hidden" name="_next" value="javascript:alert('Laporan Terkirim!');">
+                <input type="hidden" name="_captcha" value="false">
+                
+                <div class="flex justify-between items-center">
+                    <h3 class="text-xs font-extrabold text-red-400 uppercase tracking-widest"><i class="fa-solid fa-triangle-exclamation mr-1"></i> Form Saran & Report</h3>
+                    <button type="button" onclick="tutupModalReport()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+                </div>
+                <p class="text-[10px] text-slate-400 leading-tight">Kirim masukan tambah/hapus data. Laporan langsung diteruskan otomatis ke email pemilik website.</p>
+                <input type="text" name="Nama Pengirim" id="rep-name" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" readonly>
+                <textarea name="Isi Laporan" rows="4" class="w-full px-3 py-2 bg-slate-950 border border-slate-800 rounded-lg text-xs text-white" placeholder="Tulis keluhan, saran penambahan, atau reques hapus postingan meresahkan di sini..." required></textarea>
+                <button type="submit" class="w-full bg-red-600 text-white font-bold py-2 rounded-xl text-xs press-effect">Kirim ke Gmail Pemilik</button>
+            </form>
+        </div>
+
+        <div class="absolute bottom-16 right-4 z-40">
+            <button onclick="bukaModalReport()" class="w-10 h-10 bg-red-600 text-white rounded-full flex items-center justify-center shadow-lg shadow-red-950/50 hover:bg-red-500 press-effect smooth-ui animate-bounce">
+                <i class="fa-solid fa-circle-exclamation text-sm"></i>
+            </button>
+        </div>
 
         <div id="modal-opsi" class="hidden fixed inset-0 bg-black/60 backdrop-blur-xs z-50 flex items-end justify-center pb-10 px-4">
             <div class="bg-[#111827] border border-slate-800 w-full max-w-[420px] rounded-2xl p-4 space-y-3 shadow-2xl">
@@ -175,10 +249,13 @@
                 <i class="fa-solid fa-house-chimney text-base"></i><span class="text-[9px]">Beranda</span>
             </button>
             <button onclick="navigasiHalaman('chat')" id="btn-nav-chat" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
-                <i class="fa-solid fa-comments text-base"></i><span class="text-[9px]">Chat Room</span>
+                <i class="fa-solid fa-comments text-base"></i><span class="text-[9px]">Chat</span>
             </button>
             <button onclick="navigasiHalaman('siswa')" id="btn-nav-siswa" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
-                <i class="fa-solid fa-user-group text-base"></i><span class="text-[9px]">Siswa 4A</span>
+                <i class="fa-solid fa-user-group text-base"></i><span class="text-[9px]">Siswa</span>
+            </button>
+            <button onclick="navigasiHalaman('galeri')" id="btn-nav-galeri" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
+                <i class="fa-solid fa-images text-base"></i><span class="text-[9px]">Galeri</span>
             </button>
             <button onclick="navigasiHalaman('admin')" id="btn-nav-admin" class="flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui">
                 <i class="fa-solid fa-gears text-base"></i><span class="text-[9px]">Admin</span>
@@ -191,7 +268,6 @@
         import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-app.js";
         import { getDatabase, ref, onValue, push, set, remove } from "https://www.gstatic.com/firebasejs/10.7.1/firebase-database.js";
 
-        // CONFIG SUDAH FIXED REGION SINGAPURA MALAYSIA INDONESIA
         const firebaseConfig = {
             apiKey: "AIzaSyAbzZzlhrbuAch7xom4PhKInT5DWE8_3Rg",
             authDomain: "kelas4a-85ac0.firebaseapp.com",
@@ -205,15 +281,16 @@
         const app = initializeApp(firebaseConfig);
         const db = getDatabase(app);
 
-        // Kunci Nama Permanen di HP (Anti-Minta Terus)
         let namaSiswaLokal = localStorage.getItem('s4a_username_fix');
         let statusAdminAktif = localStorage.getItem('s4a_is_admin') === 'true';
         let arrayDaftarSiswa = [];
         let indexSiswaSekarang = 0;
         let base64LampiranChat = null;
-        let base64FotoMuridBaru = null;
+        let base64ModalInput = null;
         let idTargetOpsiPesan = null;
         let dataTargetOpsiPesan = null;
+        let tipeModalAktif = ""; 
+        let dataReplyTerpilih = null; 
 
         window.addEventListener('DOMContentLoaded', () => {
             if (!namaSiswaLokal && !statusAdminAktif) {
@@ -233,22 +310,29 @@
         });
 
         window.navigasiHalaman = (targetView) => {
-            ['view-beranda', 'view-chat', 'view-siswa', 'view-admin'].forEach(v => document.getElementById(v).classList.add('hidden'));
-            ['btn-nav-beranda', 'btn-nav-chat', 'btn-nav-siswa', 'btn-nav-admin'].forEach(n => document.getElementById(n).className = "flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui");
+            ['view-beranda', 'view-chat', 'view-siswa', 'view-galeri', 'view-admin'].forEach(v => document.getElementById(v).classList.add('hidden'));
+            ['btn-nav-beranda', 'btn-nav-chat', 'btn-nav-siswa', 'btn-nav-galeri', 'btn-nav-admin'].forEach(n => document.getElementById(n).className = "flex flex-col items-center gap-1 text-slate-500 font-bold press-effect smooth-ui");
 
             document.getElementById(`view-${targetView}`).classList.remove('hidden');
             document.getElementById(`btn-nav-${targetView}`).className = "flex flex-col items-center gap-1 text-blue-400 font-bold press-effect smooth-ui scale-105";
         };
 
-        // Kirim Media Foto di Chat
+        // Deteksi File Gambar Input Chat
         document.getElementById('chat-media-input').addEventListener('change', (e) => {
             const file = e.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = (ev) => {
-                    base64LampiranChat = ev.target.result;
-                    alert("Foto siap dikirim! Klik tombol kirim biru.");
-                };
+                reader.onload = (ev) => { base64LampiranChat = ev.target.result; alert("Foto siap dikirim! Klik kirim."); };
+                reader.readAsDataURL(file);
+            }
+        });
+
+        // Deteksi File Gambar Input Modal Mandiri
+        document.getElementById('m-file-gambar').addEventListener('change', (e) => {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = (ev) => { base64ModalInput = ev.target.result; };
                 reader.readAsDataURL(file);
             }
         });
@@ -262,16 +346,30 @@
                 teksPesan: inputElement.value.trim(),
                 fotoPesan: base64LampiranChat || "",
                 waktuKirim: new Date().toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'}),
-                isAdmin: statusAdminAktif
+                isAdmin: statusAdminAktif,
+                replyTo: dataReplyTerpilih || null
             };
 
             push(ref(db, 'obrolan_live'), paketDataChat);
             inputElement.value = '';
             base64LampiranChat = null;
+            batalReplyPesan();
+        };
+
+        window.pemicuReplyPesan = (user, text) => {
+            dataReplyTerpilih = { targetUser: user, targetText: text };
+            document.getElementById('reply-target-user').innerText = user;
+            document.getElementById('reply-target-text').innerText = text;
+            document.getElementById('reply-preview-container').classList.remove('hidden');
+        };
+
+        window.batalReplyPesan = () => {
+            dataReplyTerpilih = null;
+            document.getElementById('reply-preview-container').classList.add('hidden');
         };
 
         function listenDatabaseRealtime() {
-            // Sinkronisasi Chat Box Realtime
+            // Realtime Chat Box Render
             onValue(ref(db, 'obrolan_live'), (snapshot) => {
                 const boxChat = document.getElementById('box-chat-engine');
                 boxChat.innerHTML = '';
@@ -286,20 +384,34 @@
                     const divCard = document.createElement('div');
                     
                     let isMe = data.namaUser === namaSiswaLokal;
-                    divCard.className = `p-3 rounded-xl max-w-[85%] mb-2 ${isMe ? 'ml-auto bg-blue-600/30 border border-blue-500/40' : 'bg-slate-900/80 border border-slate-800'}`;
+                    divCard.className = `p-3 rounded-xl max-w-[85%] mb-2 animate-fade-in relative group ${isMe ? 'ml-auto bg-blue-600/30 border border-blue-500/40' : 'bg-slate-900/80 border border-slate-800'}`;
                     
-                    let mediaKonten = data.fotoPesan ? `<img src="${data.fotoPesan}" class="w-full max-h-48 object-cover rounded-lg mt-2">` : '';
+                    let mediaKonten = data.fotoPesan ? `<img src="${data.fotoPesan}" class="w-full max-h-48 object-cover rounded-lg mt-2 shadow-sm">` : '';
                     
+                    // Render UI Data Reply jika ada
+                    let replyUI = '';
+                    if (data.replyTo) {
+                        replyUI = `
+                            <div class="bg-black/30 border-l-2 border-blue-400 p-1.5 rounded mb-1.5 text-[10px] opacity-80 text-slate-300">
+                                <b class="text-blue-400">${data.replyTo.targetUser}</b>: ${data.replyTo.targetText}
+                            </div>
+                        `;
+                    }
+
                     divCard.innerHTML = `
+                        ${replyUI}
                         <div class="flex items-center justify-between gap-3 mb-1">
                             <span class="text-[10px] font-black text-blue-400">${data.namaUser} ${data.isAdmin ? '<span class="text-amber-400 text-[8px] bg-amber-950 px-1 rounded">[VERIFIED]</span>' : ''}</span>
-                            <span class="text-[8px] text-slate-500">${data.waktuKirim}</span>
+                            <div class="flex items-center gap-1.5">
+                                <button onclick="pemicuReplyPesan('${data.namaUser}', '${data.teksPesan || 'Mengirim Foto'}')" class="text-slate-500 hover:text-blue-400 text-[10px] transition"><i class="fa-solid fa-reply"></i></button>
+                                <span class="text-[8px] text-slate-500">${data.waktuKirim}</span>
+                            </div>
                         </div>
                         <p class="text-xs text-slate-200">${data.teksPesan}</p>
                         ${mediaKonten}
                     `;
 
-                    // Fitur Long Press Menu Opsional untuk Admin
+                    // Long press menu (Admin saja)
                     let deteksiWaktuTahan;
                     divCard.addEventListener('touchstart', () => { deteksiWaktuTahan = setTimeout(() => pemicuMenuOpsi(idChat, data), 700); });
                     divCard.addEventListener('touchend', () => clearTimeout(deteksiWaktuTahan));
@@ -311,7 +423,7 @@
                 boxChat.scrollTop = boxChat.scrollHeight;
             });
 
-            // Sinkronisasi Pesan PIN
+            // Realtime Pin
             onValue(ref(db, 'pesan_tersemat'), (snapshot) => {
                 const pinBox = document.getElementById('pinned-container');
                 const pinText = document.getElementById('pinned-content');
@@ -324,7 +436,7 @@
                 }
             });
 
-            // Sinkronisasi Data Carousel Siswa
+            // Realtime Siswa
             onValue(ref(db, 'data_siswa_kelas'), (snapshot) => {
                 arrayDaftarSiswa = [];
                 if(snapshot.exists()) {
@@ -337,63 +449,125 @@
                 }
                 renderCarouselSiswa();
             });
+
+            // Realtime Galeri Foto
+            onValue(ref(db, 'galeri_kelas_4a'), (snapshot) => {
+                const boxGaleri = document.getElementById('box-galeri-foto');
+                boxGaleri.innerHTML = '';
+                if(!snapshot.exists()) {
+                    boxGaleri.innerHTML = `<p class="col-span-2 text-center text-slate-500 text-xs py-10">Galeri kosong. Unggah keseruan pertamamu!</p>`;
+                    return;
+                }
+                snapshot.forEach((child) => {
+                    const k = child.key;
+                    const v = child.val();
+                    boxGaleri.innerHTML += `
+                        <div class="bg-[#161f30] rounded-xl border border-slate-800 overflow-hidden shadow-md group animate-fade-in relative">
+                            <img src="${v.foto}" class="w-full h-32 object-cover group-hover:scale-105 transition duration-300">
+                            <div class="p-2">
+                                <p class="text-[10px] font-bold text-slate-300 truncate">${v.caption}</p>
+                                <p class="text-[8px] text-slate-500">Oleh: ${v.oleh}</p>
+                            </div>
+                            ${statusAdminAktif ? `<button onclick="hapusGambarGaleri('${k}')" class="absolute top-1 right-1 w-5 h-5 bg-red-600/80 text-white rounded flex items-center justify-center text-[9px] hover:bg-red-600"><i class="fa-solid fa-trash"></i></button>` : ''}
+                        </div>
+                    `;
+                });
+            });
         }
 
-        function pemicuMenuOpsi(idChat, data) {
-            if(!statusAdminAktif) return;
-            idTargetOpsiPesan = idChat;
-            dataTargetOpsiPesan = data;
-            document.getElementById('modal-opsi').classList.remove('hidden');
-        }
-
+        function pemicuMenuOpsi(idChat, data) { if(!statusAdminAktif) return; idTargetOpsiPesan = idChat; dataTargetOpsiPesan = data; document.getElementById('modal-opsi').classList.remove('hidden'); }
         window.tutupModalOpsi = () => { document.getElementById('modal-opsi').classList.add('hidden'); };
         window.eksekusiPinPesan = () => { set(ref(db, 'pesan_tersemat'), dataTargetOpsiPesan); tutupModalOpsi(); };
         window.eksekusiHapusPesan = () => { remove(ref(db, 'obrolan_live/' + idTargetOpsiPesan)); tutupModalOpsi(); };
 
-        // Carousel Slider Logika
-        window.geserSiswa = (arah) => {
-            if(arrayDaftarSiswa.length === 0) return;
-            indexSiswaSekarang = (indexSiswaSekarang + arah + arrayDaftarSiswa.length) % arrayDaftarSiswa.length;
-            renderCarouselSiswa();
-        };
+        // Carousel Slider
+        window.geserSiswa = (arah) => { if(arrayDaftarSiswa.length === 0) return; indexSiswaSekarang = (indexSiswaSekarang + arah + arrayDaftarSiswa.length) % arrayDaftarSiswa.length; renderCarouselSiswa(); };
 
         function renderCarouselSiswa() {
             const wadahKonten = document.getElementById('siswa-card-content');
             const penunjukAngka = document.getElementById('counter-carousel');
-            if(arrayDaftarSiswa.length === 0) {
-                wadahKonten.innerHTML = `<div class="text-center text-xs text-slate-500 py-16">Belum ada murid terdaftar.</div>`;
-                penunjukAngka.innerText = "0/0";
-                return;
-            }
+            if(arrayDaftarSiswa.length === 0) { wadahKonten.innerHTML = `<div class="text-center text-xs text-slate-500 py-16">Belum ada murid terdaftar.</div>`; penunjukAngka.innerText = "0/0"; return; }
+            
             const s = arrayDaftarSiswa[indexSiswaSekarang];
             penunjukAngka.innerText = `${indexSiswaSekarang + 1}/${arrayDaftarSiswa.length}`;
-            let bgFotoMeme = s.fotoProfil ? `<img src="${s.fotoProfil}" class="w-full h-44 object-cover rounded-xl border border-slate-800">` : `<div class="w-full h-44 bg-slate-950 rounded-xl border border-dashed border-slate-800 flex items-center justify-center text-slate-600"><span class="text-[10px]">Tanpa Foto</span></div>`;
+            let bgFotoMeme = s.fotoProfil ? `<img src="${s.fotoProfil}" class="w-full h-44 object-cover rounded-xl border border-slate-800 shadow-inner">` : `<div class="w-full h-44 bg-slate-950 rounded-xl border border-dashed border-slate-800 flex items-center justify-center text-slate-600"><span class="text-[10px]">Tanpa Foto</span></div>`;
             
             wadahKonten.innerHTML = `
-                ${bgFotoMeme}
-                <div class="space-y-1">
-                    <div class="flex items-center justify-between">
-                        <h4 class="text-base font-extrabold text-white">${s.nama}</h4>
-                        <span class="text-[10px] bg-blue-950 text-blue-400 px-2 py-0.5 rounded border border-blue-900 font-bold">Absen ${s.absen}</span>
+                <div class="animate-fade-in space-y-4">
+                    ${bgFotoMeme}
+                    <div class="space-y-1">
+                        <div class="flex items-center justify-between">
+                            <h4 class="text-base font-extrabold text-white">${s.nama}</h4>
+                            <span class="text-[10px] bg-blue-950 text-blue-400 px-2 py-0.5 rounded border border-blue-900 font-bold">Absen ${s.absen}</span>
+                        </div>
+                        <p class="text-[11px] text-slate-400">Umur: ${s.umur} Tahun</p>
+                        <p class="text-xs text-slate-300 bg-slate-950/40 p-3 rounded-lg italic">"${s.deskripsi || ''}"</p>
                     </div>
-                    <p class="text-[11px] text-slate-400">Umur: ${s.umur} Tahun</p>
-                    <p class="text-xs text-slate-300 bg-slate-950/40 p-3 rounded-lg italic">"${s.deskripsi || ''}"</p>
+                    ${statusAdminAktif ? `<button onclick="hapusSiswaDariDatabase('${s.idKunci}')" class="w-full bg-red-950 border border-red-900 text-red-400 py-1.5 rounded-xl text-[10px] font-bold tracking-wide press-effect">HAPUS DATA SISWA</button>` : ''}
                 </div>
-                ${statusAdminAktif ? `<button onclick="hapusSiswaDariDatabase('${s.idKunci}')" class="w-full mt-2 bg-red-950 border border-red-900 text-red-400 py-1 rounded text-[10px]">HAPUS SISWA</button>` : ''}
             `;
         }
 
         window.hapusSiswaDariDatabase = (idKunci) => { if(confirm("Hapus siswa ini?")) { remove(ref(db, 'data_siswa_kelas/' + idKunci)); indexSiswaSekarang = 0; } };
+        window.hapusGambarGaleri = (idKunci) => { if(confirm("Hapus foto galeri ini?")) { remove(ref(db, 'galeri_kelas_4a/' + idKunci)); } };
 
-        // Validasi Admin (Sandi: langitjp)
+        // Modal Jalur Mandiri Handler
+        window.bukaModalMandiri = (tipe) => {
+            tipeModalAktif = tipe;
+            document.getElementById('modal-mandiri').classList.remove('hidden');
+            if(tipe === 'siswa') {
+                document.getElementById('modal-mandiri-title').innerText = "Daftar Profilmu";
+                document.getElementById('form-mandiri-siswa').classList.remove('hidden');
+                document.getElementById('form-mandiri-galeri').classList.add('hidden');
+            } else {
+                document.getElementById('modal-mandiri-title').innerText = "Unggah Foto Kelas";
+                document.getElementById('form-mandiri-galeri').classList.remove('hidden');
+                document.getElementById('form-mandiri-siswa').classList.add('hidden');
+            }
+        };
+
+        window.tutupModalMandiri = () => {
+            document.getElementById('modal-mandiri').classList.add('hidden');
+            base64ModalInput = null;
+            document.getElementById('m-file-gambar').value = '';
+        };
+
+        window.prosesSimpanMandiri = () => {
+            if(tipeModalAktif === 'siswa') {
+                const nama = document.getElementById('m-nama').value.trim();
+                const absen = document.getElementById('m-absen').value;
+                const umur = document.getElementById('m-umur').value;
+                const deskripsi = document.getElementById('m-deskripsi').value.trim();
+                if(!nama || !absen || !umur) return alert("Harap isi nama, absen, dan umur!");
+
+                push(ref(db, 'data_siswa_kelas'), { nama, absen, umur, deskripsi, fotoProfil: base64ModalInput || "" });
+                alert("Profil kamu sukses terpasang!");
+                ['m-nama', 'm-absen', 'm-umur', 'm-deskripsi'].forEach(id => document.getElementById(id).value = '');
+            } else {
+                const caption = document.getElementById('m-keterangan').value.trim();
+                if(!base64ModalInput) return alert("Harap pilih gambar terlebih dahulu!");
+
+                push(ref(db, 'galeri_kelas_4a'), { caption: caption || "Keseruan 4A", foto: base64ModalInput, oleh: namaSiswaLokal });
+                alert("Foto sukses masuk galeri kelas!");
+                document.getElementById('m-keterangan').value = '';
+            }
+            tutupModalMandiri();
+        };
+
+        // Modal Report / Saran System
+        window.bukaModalReport = () => {
+            document.getElementById('rep-name').value = statusAdminAktif ? "Admin Terverifikasi" : namaSiswaLokal;
+            document.getElementById('modal-report').classList.remove('hidden');
+        };
+        window.tutupModalReport = () => { document.getElementById('modal-report').classList.add('hidden'); };
+
+        // Validasi Kontrol Admin
         window.validasiAdmin = () => {
             if (document.getElementById('sandi-admin').value === 'langitjp') {
                 statusAdminAktif = true;
                 localStorage.setItem('s4a_is_admin', 'true');
                 pemicuAdminLoginSukses();
-            } else {
-                alert("Sandi Salah!");
-            }
+            } else { alert("Sandi Salah!"); }
         };
 
         function pemicuAdminLoginSukses() {
@@ -410,28 +584,6 @@
             document.getElementById('admin-dashboard').classList.add('hidden');
             document.getElementById('badge-identitas').innerText = namaSiswaLokal;
             renderCarouselSiswa();
-        };
-
-        document.getElementById('add-foto-file').addEventListener('change', (e) => {
-            const file = e.target.files[0];
-            if(file) {
-                const reader = new FileReader();
-                reader.onload = (ev) => { base64FotoMuridBaru = ev.target.result; };
-                reader.readAsDataURL(file);
-            }
-        });
-
-        window.prosesSimpanSiswa = () => {
-            const nama = document.getElementById('add-nama').value;
-            const absen = document.getElementById('add-absen').value;
-            const umur = document.getElementById('add-umur').value;
-            const deskripsi = document.getElementById('add-deskripsi').value;
-            if(!nama || !absen || !umur) return alert("Isi formulir dengan lengkap!");
-
-            push(ref(db, 'data_siswa_kelas'), { nama, absen, umur, deskripsi, fotoProfil: base64FotoMuridBaru || "" });
-            alert("Siswa sukses terdaftar!");
-            ['add-nama', 'add-absen', 'add-umur', 'add-deskripsi', 'add-foto-file'].forEach(id => document.getElementById(id).value = '');
-            base64FotoMuridBaru = null;
         };
     </script>
 </body>
